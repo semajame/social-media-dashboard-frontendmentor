@@ -1,0 +1,76 @@
+$light-bg-white: #ffffff;
+$light-topbgpattern-very-pale-blue: #f5f7ff;
+$light-cardbg-light-grayish-blue: hsl(227, 47%, 96%);
+$light-text-dark-grayish-blue: hsl(228, 12%, 44%);
+$light-text-very-dark-blue: hsl(230, 17%, 14%);
+$light-toggle: hsl(230, 22%, 74%);
+
+
+body.light{
+    background: linear-gradient(0deg, rgba(255,255,255,1) 72%, rgba(245,247,255,1) 73%);
+
+    .left-header-container{
+        .h1{
+            color: black;
+        }
+    }
+
+    main{
+
+        .main-flexbox{
+            .main-content{
+                background-color: $light-cardbg-light-grayish-blue;
+
+                .main-header{
+                    span.light{
+                        color: $light-text-dark-grayish-blue;
+                    }
+                }
+
+                .main-middle{
+                    h2{
+                        color: black;
+                    }
+
+                }
+            }
+        }
+
+        h2{
+            color: hsl(228, 12%, 44%);
+        }
+
+        .main-grid{
+
+            .grid-middle{
+                .views{
+                    color: black;
+                }
+            }
+        }
+        
+
+        .grid-content{
+            background-color: $light-cardbg-light-grayish-blue;
+        }
+    }
+
+    
+}
+
+@media only screen and (max-width: 1023px) {
+
+    body.light{
+        background: linear-gradient(0deg, rgba(255,255,255,1) 86%, rgba(245,247,255,1) 90%);
+
+        header{
+
+            hr{
+                border-color: rgba(128, 128, 128, 0.664);
+            }
+        }
+    }
+
+  
+   
+}

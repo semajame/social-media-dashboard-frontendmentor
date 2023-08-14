@@ -1,0 +1,421 @@
+// # Front-end Style Guide
+
+// ## Layout
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+
+// ### Primary
+
+// - Lime Green: hsl(163, 72%, 41%)
+// - Bright Red: hsl(356, 69%, 56%)
+
+// - Facebook: hsl(208, 92%, 53%)
+// - Twitter: hsl(203, 89%, 53%)
+// - Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%)
+// - YouTube: hsl(348, 97%, 39%)
+
+// #### Dark Theme
+
+// - Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
+
+// #### Light Theme
+
+// - Toggle: hsl(230, 22%, 74%)
+
+// ### Neutral
+
+// #### Dark Theme
+
+// - Very Dark Blue (BG): hsl(230, 17%, 14%)
+// - Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
+// - Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+// - Desaturated Blue (Text): hsl(228, 34%, 66%)
+// - White (Text): hsl(0, 0%, 100%)
+
+// #### Light Theme
+
+// - White (BG): hsl(0, 0%, 100%)
+// - Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
+// - Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
+// - Dark Grayish Blue (Text): hsl(228, 12%, 44%)
+// - Very Dark Blue (Text): hsl(230, 17%, 14%)
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size (Overview Card Headings): 14px
+
+// ### Font
+
+// - Family: [Inter](https://fonts.google.com/specimen/Inter)
+// - Weights: 400, 700
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('/styles/light.css');
+
+// ### DARK THEME
+$dark-bg-very-dark-blue: #1e202a;
+$dark-topbgpattern-very-dark-blue: #1f212e;
+$dark-cardbg-dark-desaturated-blue: hsl(228, 28%, 20%);
+$dark-text-desaturated-blue: hsl(228, 34%, 66%);
+$dark-text-white: hsl(0, 0%, 100%);
+$dark-toggle: linear gradient #378fe6 to rgb(62, 218, 130);
+
+// ### LIGHT THEME
+
+$light-bg-white: #ffffff;
+$light-topbgpattern-very-pale-blue: #f5f7ff;
+$light-cardbg-light-grayish-blue: hsl(227, 47%, 96%);
+$light-text-dark-grayish-blue: hsl(228, 12%, 44%);
+$light-text-very-dark-blue: hsl(230, 17%, 14%);
+$light-toggle: hsl(230, 22%, 74%);
+
+// ### PRIMARY
+
+$lime-green: hsl(163, 72%, 41%);
+$bright-red: hsl(356, 69%, 56%);
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram: linear gradient #fdc468 to #df4996;
+$youTube: hsl(348, 97%, 39%);
+
+// ### FONT FAM
+
+$font-family: 'Inter', sans-serif;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+@mixin box(){
+    width: 250px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: $dark-cardbg-dark-desaturated-blue;
+}
+
+body{
+    font-family: $font-family;
+    background: linear-gradient(0deg, rgba(30,32,42,1) 72%, rgba(31,33,46,1) 73%);
+    // min-height: 100vh; 
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // overflow: hidden;
+    padding: 1rem 0; 
+}
+
+.content{
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: $font-weight-bold;
+
+    span{
+        color: $dark-text-desaturated-blue;
+    }
+
+    .left-header-container{
+
+        .h1{
+            color: $dark-text-white;
+            font-size: 1.5rem;
+        }
+
+        span{
+            font-size: 0.9rem;
+        }
+
+    }
+
+    hr{
+        display: none;
+    }
+
+    .right-header-container{
+
+        /* The switch - the box around the slider */
+        .switch {
+            font-size: 17px;
+            position: relative;
+            display: inline-block;
+            width: 3.2em;
+            height: 1.5em;
+        }
+        
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(270deg, rgba(62,218,130,1) 18%, rgba(55,143,230,1) 92%);
+            border: 1px solid transparent;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 30px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 1.2em;
+            width: 1.2em;
+            top: 0.1em;
+            border-radius: 20px;
+            left: 0.22em;
+            bottom: 0.25em;
+            background-color: $dark-cardbg-dark-desaturated-blue;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        input:checked + .slider {
+            background: $light-toggle;
+            border: 1px solid transparent;
+        }
+        
+        input:checked + .slider:before {
+            -webkit-transform: translateX(1.4em);
+                -ms-transform: translateX(1.4em);
+                    transform: translateX(1.4em);
+            background-color: #fff;
+        }
+
+        .dark-mode{
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+main{
+    margin: 1.5rem 0;
+
+    .main-flexbox{
+        // display: grid;
+        // grid-template-columns: repeat(4, 100%);
+        // grid-column-gap: 30px;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+       
+
+        .main-content{
+            @include box();
+            height: 220px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            cursor: pointer;
+            width: 260px;
+
+            .main-header{
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.8rem;
+                color: $dark-text-desaturated-blue;
+                font-size: 0.9rem;
+
+                span.light{
+                    color: $light-text-dark-grayish-blue;
+                }
+            }
+
+            .main-middle{
+
+                h2{
+                    color: $dark-text-white;
+                    font-size: 3.5rem;
+                }
+
+                span{
+                    margin-top: -2rem;
+                    letter-spacing: 0.2rem;
+                    color: $dark-text-desaturated-blue;
+                }
+            }
+
+            .main-bottom{
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-top: 1rem;
+        
+                span{
+                    font-weight: $font-weight-bold;
+                    color: $lime-green;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        .main-content:hover{
+            filter: contrast(92%);
+        }
+
+
+    }
+
+    // GRID
+
+    h2{
+        color: $dark-text-white;
+    }
+
+
+    .main-grid{
+        margin-top: 1.2rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
+
+        .grid-content{
+            @include box();
+            width: 100%;
+            height: 110px;
+            font-weight: $font-weight-bold;
+
+            .grid-header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.8rem 1.3rem;
+
+                span{
+                    color: $dark-text-desaturated-blue;
+                }
+            }
+
+            .grid-middle{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 1.3rem;
+
+                .views{
+                    color: $dark-text-white;
+                    font-size: 1.8rem;
+                }
+
+                .grid-number{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    span{
+                        color: $lime-green;
+                    }
+
+                    // .views{
+                    //     color: $dark-text-white;
+                    // }
+                }
+            }
+        }
+
+        .grid-content:hover{
+            filter: contrast(92%);
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1023px) {
+    /* Styles for medium screens */
+
+    body{
+        display: block;
+        padding: 2rem;
+        background: linear-gradient(0deg, rgba(30,32,42,1) 86%, rgba(31,33,46,1) 90%);
+    }
+
+    header{
+        display: block;
+
+        .left-header-container{
+            margin-bottom: 1rem;
+        }
+
+        hr{
+            display: block;
+            margin-bottom: 1rem;
+            border-top: 1px;
+            border-color: $dark-cardbg-dark-desaturated-blue;
+        }
+
+        .right-header-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+    }
+
+    main{
+
+        .main-flexbox{
+        flex-wrap: wrap;
+        //   flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .main-grid{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+    
+    body{
+        padding: 2rem;
+    }
+}
+  
+
+@media only screen and (max-width: 390px){
+
+    main{
+
+        .main-flexbox{
+            
+
+            .main-content{
+                width: 100%;
+            }
+        }
+    }
+}

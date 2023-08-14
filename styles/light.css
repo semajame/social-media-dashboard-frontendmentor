@@ -1,0 +1,33 @@
+body.light {
+  background: linear-gradient(0deg, rgb(255, 255, 255) 72%, rgb(245, 247, 255) 73%);
+}
+body.light .left-header-container .h1 {
+  color: black;
+}
+body.light main .main-flexbox .main-content {
+  background-color: hsl(227, 47%, 96%);
+}
+body.light main .main-flexbox .main-content .main-header span.light {
+  color: hsl(228, 12%, 44%);
+}
+body.light main .main-flexbox .main-content .main-middle h2 {
+  color: black;
+}
+body.light main h2 {
+  color: hsl(228, 12%, 44%);
+}
+body.light main .main-grid .grid-middle .views {
+  color: black;
+}
+body.light main .grid-content {
+  background-color: hsl(227, 47%, 96%);
+}
+
+@media only screen and (max-width: 1023px) {
+  body.light {
+    background: linear-gradient(0deg, rgb(255, 255, 255) 86%, rgb(245, 247, 255) 90%);
+  }
+  body.light header hr {
+    border-color: rgba(128, 128, 128, 0.664);
+  }
+}/*# sourceMappingURL=light.css.map */
